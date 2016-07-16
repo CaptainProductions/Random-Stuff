@@ -1,0 +1,25 @@
+var coin = function(x,y,fill1,fill2) {
+    strokeWeight(3);
+    stroke(0);
+    fill(fill1);
+    quad(x,y,x-20,y+20,x,y+40,x+20,y+20);
+    noStroke();
+    fill(fill2);
+    quad(x,y+5,x-15,y+20,x,y+35,x+15,y+20);
+        fill(fill1);
+    quad(x,y+10,x-10,y+20,x,y+30,x+10,y+20);
+    fill(0,0,0,30);
+    triangle(x,y,x+20,y+20,x,y+40);
+    
+};
+draw = function() {
+    background(255);
+
+    for(var i = 0; i < width+100; i+=40) {
+        for(var j = 0; j < height+100; j+=40) {
+          coin(i,j,j,i);  
+        }
+    }
+
+
+};
