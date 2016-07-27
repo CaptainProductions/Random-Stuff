@@ -1,0 +1,43 @@
+textAlign(LEFT,CENTER);
+textFont(createFont("Avenir"));
+
+var scroll = 0;
+
+draw = function() {
+    background(255);
+strokeWeight(11);
+   for (var i = 0; i < height + 40; i += 10) {
+        stroke(lerpColor(color(63, 171, 0), color(255, 242, 0), i / height));
+        line(0, i, width, i);
+    }
+    pushMatrix();
+    translate(0,scroll);
+    textSize(50);
+    fill(255);
+    text("Making a Game",15,40);
+    textSize(20);
+    text("A Tutorial by Captain",15,85);
+    
+    textSize(30);
+    text("STEP 1: Origional Ideas",15,150);
+    textSize(15);
+    text("All great games should be creative.\n Creativity comes from a great concept or idea.\n There are lots of places you can get ideas.\n You can look up a 'game idea generator' or something.\n One thing I like to do is take a simple concept and mix it\n with an object or noun. Something like, Squirrel Jump,\n where you play as a squirrel on a trampoline and you\n continually bounce higher, and the higher you get,\n the harder it gets to land on the trampoline.\n Or, you can take 2 games/activities, and mix them.\n What would Slither.io and Minecraft make? \nA game where you are a snake like in slither,\n but you can place different blocks to \nserve as obstructions or weapons?\nOne last method you could use is switch the time and\nplace of two different game, like Tiny Tower in the \nMiddle Ages.\nKnow your skill level and what you can actually make.",15,355);
+    
+    textSize(30);
+    text("STEP 2: Planning",15,575);
+    textSize(15);
+    text("Once you have a great idea that you think you can make,\nit's good to do some planning.\nFirst, I like to think of the title of the game. I name it\ndepending on the plot or theme. Under the Sea was a\nunderwater game, hence the name.\n\nStoryline: I think all games should have a storyline.\nStorylines add a new level of depth to the game.\n I would rather play a game with the premesis\n `Jaime has been caught in a guerilla fight\n and he needs to escape.`, rather than\n 'Survive for as long as possilbe.'\nWrite down all the cool ideas that you have so you can\nimplement them in your game later.",15,750);
+    
+    
+    popMatrix();
+    if(keyIsPressed && keyCode === DOWN) {
+        scroll -=2;    
+    }
+    if(keyIsPressed && keyCode === UP) {
+        scroll +=2;    
+    }
+    
+    
+    
+    
+};
